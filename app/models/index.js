@@ -5,7 +5,6 @@ const sequelize = new Sequelize(dbConfig.DB,dbConfig.USER,dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
     operatorAliases: false,
-
     pool: {
         max: dbConfig.max,
         min: dbConfig.min,
@@ -14,7 +13,7 @@ const sequelize = new Sequelize(dbConfig.DB,dbConfig.USER,dbConfig.PASSWORD, {
     }
 })
 
-const db = {};
+const db = {}; //Creamos un objeto
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
@@ -27,6 +26,7 @@ db.users.hasMany(db.projects, {
     as: 'projects'
 });
 //El o los proyectos pueden pertenecer a un solo usuario
+//Pertenece a
 db.projects.belongsTo(db.users, {
     foreignKey: 'userId',
     as: 'user'

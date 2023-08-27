@@ -1,4 +1,5 @@
 
+//Solo estamos definiendo
 
 module.exports = (sequelize,DataTypes) => {
     const Project = sequelize.define('projects', {

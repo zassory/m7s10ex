@@ -1,4 +1,5 @@
 
+//Aqui solo estamos definiendo
 
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('users', {
